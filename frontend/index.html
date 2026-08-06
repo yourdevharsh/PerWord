@@ -7,7 +7,16 @@
     <title>PerWord</title>
   </head>
   <body>
-    <input type="file" name="fileInputs" id="fileInputs">
+    <textarea name="userPrompt" id="userPrompt" placeholder="Enter instruction" cols="40" rows="5"></textarea>
+    <br>
+    <br>
+    <input type="file" name="fileInputs" id="fileInputs" multiple>
+    <br>
+    <br>
+    <button id="submitButton">Submit</button>
+    <br>
+    <br>
+    <h2 id="result"></h2>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
