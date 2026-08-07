@@ -7,7 +7,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   const fileInputsEl = document.querySelector(
     "#fileInputs",
   ) as HTMLInputElement | null;
-  const submitButtonEl = document.querySelector("#submitButton");
+  const submitButtonEl = document.querySelector(
+    "#submitButton",
+  ) as HTMLButtonElement | null;
   const resultEl = document.querySelector(
     "#result",
   ) as HTMLHeadingElement | null;
@@ -46,7 +48,7 @@ async function processRequest(
   formData.append("userPrompt", userPrompt);
 
   try {
-    const response = await fetch("http://localhost:8000/api/v1/process-doc", {
+    const response = await fetch("http://localhost:8000/api/v1/process", {
       method: "POST",
       body: formData,
     });
