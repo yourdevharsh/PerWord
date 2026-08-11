@@ -24,9 +24,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const files = fileInputsEl?.files;
-    if (!files) {
+    if (!files || files.length == 0) {
       if (resultEl) {
-        resultEl.innerHTML = "No Instruction";
+        resultEl.innerHTML = "No files";
       }
       return;
     }
