@@ -23,4 +23,4 @@ def process(
     files: List[UploadFile] = File(...)
 ):
         
-    return { "message" : "success", "prompt" : userPrompt }
+    return { "success" : True, "message" : userPrompt }

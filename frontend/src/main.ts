@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     "#result",
   ) as HTMLHeadingElement | null;
 
-  submitButtonEl?.addEventListener("click", () => {
+  submitButtonEl?.addEventListener("click", async () => {
     const userPrompt = userPromptEl?.value;
     if (!userPrompt) {
       if (resultEl) {
@@ -31,14 +31,18 @@ document.addEventListener("DOMContentLoaded", async () => {
       return;
     }
 
-    processRequest(files, userPrompt);
+    const response = await processRequest(files, userPrompt);
+
+    if (resultEl) {
+        resultEl.innerHTML = response;
+      }
   });
 });
 
 async function processRequest(
   files: FileList,
   userPrompt: string,
-): Promise<void> {
+): Promise<string> {
   const formData = new FormData();
 
   Array.from(files).forEach((file) => {
@@ -56,5 +60,11 @@ async function processRequest(
     if (!response.ok) {
       throw new Error(`${response.status}`);
     }
-  } catch (error) {}
+
+    const data = await response.json();
+
+    return data.message;
+  } catch (error) {
+    return `${error}`;
+  }
 }
