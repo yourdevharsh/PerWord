@@ -49,7 +49,7 @@ async function processRequest(
     formData.append("files", file);
   });
 
-  formData.append("userPrompt", userPrompt);
+  formData.append("user_prompt", userPrompt);
 
   try {
     const response = await fetch("http://localhost:8000/api/v1/process", {
