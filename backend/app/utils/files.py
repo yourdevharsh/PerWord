@@ -1,5 +1,5 @@
 import os
 
-def upload_files(files):
-    
+def upload_file(files):
+
     pass

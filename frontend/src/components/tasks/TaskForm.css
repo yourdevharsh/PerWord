@@ -1,0 +1,147 @@
+.task-form {
+  padding: 28px;
+  border: 1px solid #e4e4e0;
+  border-radius: 28px;
+  background: #ffffff;
+}
+
+.task-form__eyebrow {
+  margin-bottom: 12px;
+  color: #777774;
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.task-form__name {
+  width: 100%;
+  min-height: 72px;
+  padding: 0 0 12px;
+  border: 0;
+  border-bottom: 1px solid #e2e2de;
+  border-radius: 0;
+  outline: 0;
+  background: transparent;
+  color: #121212;
+  font-size: clamp(28px, 3.3vw, 44px);
+  font-weight: 620;
+  letter-spacing: -0.045em;
+}
+
+.task-form__name::placeholder {
+  color: #a9a9a5;
+}
+
+.task-form__name:focus {
+  border-bottom-color: #111111;
+}
+
+.task-form__flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 52px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  margin-top: 28px;
+}
+
+.task-form__arrow {
+  display: grid;
+  place-items: center;
+  color: #9a9a97;
+}
+
+.task-form__arrow svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+.task-form__details {
+  display: block;
+  width: 100%;
+  min-height: 120px;
+  margin-top: 22px;
+  padding: 18px 20px;
+  resize: vertical;
+  border: 1px solid #e0e0dc;
+  border-radius: 17px;
+  outline: none;
+  background: #ffffff;
+  color: #151515;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.task-form__details::placeholder {
+  color: #999995;
+}
+
+.task-form__details:focus {
+  border-color: #aaaaa5;
+}
+
+.task-form__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.task-form__status {
+  min-height: 20px;
+  color: #757572;
+  font-size: 13px;
+}
+
+.task-form__status--visible::before {
+  content: "✓ ";
+}
+
+.task-form__save {
+  min-width: 122px;
+  padding: 13px 18px;
+  border: 1px solid #111111;
+  border-radius: 12px;
+  background: #111111;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.task-form__save:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.task-form__save:disabled {
+  cursor: not-allowed;
+  opacity: 0.28;
+}
+
+@media (max-width: 980px) {
+  .task-form__flow {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .task-form__arrow {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .task-form {
+    padding: 18px;
+    border-radius: 21px;
+  }
+
+  .task-form__name {
+    min-height: 64px;
+  }
+}

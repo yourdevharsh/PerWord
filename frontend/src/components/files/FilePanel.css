@@ -1,0 +1,158 @@
+.file-panel {
+  min-width: 0;
+}
+
+.file-panel__label {
+  margin-bottom: 10px;
+  padding-left: 2px;
+  color: #777774;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.file-panel__surface {
+  min-height: 332px;
+  overflow: hidden;
+  border: 1px dashed #cececa;
+  border-radius: 22px;
+  background: #fafaf8;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.file-panel__surface--dragging {
+  border-color: #111111;
+  background: #f5f5f1;
+}
+
+.file-panel__empty {
+  display: flex;
+  width: 100%;
+  min-height: 332px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+  border: 0;
+  background: transparent;
+  color: #111111;
+  cursor: pointer;
+}
+
+.file-panel__empty-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 5px;
+  place-items: center;
+  border: 1px solid #d8d8d4;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.file-panel__empty-icon svg,
+.file-grid__add svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 1.7;
+}
+
+.file-panel__empty-title {
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.file-panel__empty-copy {
+  color: #858583;
+  font-size: 13px;
+  text-align: center;
+}
+
+.file-grid {
+  display: grid;
+  min-height: 332px;
+  gap: 9px;
+  padding: 9px;
+}
+
+.file-grid--1 {
+  grid-template-columns: 1fr;
+}
+
+.file-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.file-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.file-grid--4 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.file-grid--5 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.file-grid--1 .file-card {
+  min-height: 312px;
+}
+
+.file-grid--3 .file-card:nth-child(3) {
+  min-height: 312px;
+}
+
+.file-grid--4 .file-card,
+.file-grid--5 .file-card {
+  min-height: 148px;
+}
+
+.file-grid__add {
+  display: flex;
+  min-height: 100px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 18px;
+  border: 1px dashed #cfcfca;
+  border-radius: 17px;
+  background: transparent;
+  color: #777774;
+  cursor: pointer;
+}
+
+.file-grid__add:hover {
+  background: #ffffff;
+  color: #111111;
+}
+
+.file-grid__add span {
+  font-size: 13px;
+  font-weight: 650;
+}
+
+@media (max-width: 640px) {
+  .file-panel__surface,
+  .file-panel__empty,
+  .file-grid {
+    min-height: 286px;
+  }
+
+  .file-panel__empty {
+    min-height: 286px;
+  }
+
+  .file-grid--3,
+  .file-grid--5 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .file-grid--3 .file-card:nth-child(3) {
+    min-height: 140px;
+  }
+}

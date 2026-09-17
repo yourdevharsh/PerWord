@@ -1,70 +1,8 @@
+import { StrictMode, createElement } from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App";
 import "./style.css";
 
-document.addEventListener("DOMContentLoaded", async () => {
-  const userPromptEl = document.querySelector(
-    "#userPrompt",
-  ) as HTMLTextAreaElement | null;
-  const fileInputsEl = document.querySelector(
-    "#fileInputs",
-  ) as HTMLInputElement | null;
-  const submitButtonEl = document.querySelector(
-    "#submitButton",
-  ) as HTMLButtonElement | null;
-  const resultEl = document.querySelector(
-    "#result",
-  ) as HTMLHeadingElement | null;
-
-  submitButtonEl?.addEventListener("click", async () => {
-    const userPrompt = userPromptEl?.value;
-    if (!userPrompt) {
-      if (resultEl) {
-        resultEl.innerHTML = "No Instruction";
-      }
-      return;
-    }
-
-    const files = fileInputsEl?.files;
-    if (!files || files.length == 0) {
-      if (resultEl) {
-        resultEl.innerHTML = "No files";
-      }
-      return;
-    }
-
-    const response = await processRequest(files, userPrompt);
-
-    if (resultEl) {
-        resultEl.innerHTML = response;
-      }
-  });
-});
-
-async function processRequest(
-  files: FileList,
-  userPrompt: string,
-): Promise<string> {
-  const formData = new FormData();
-
-  Array.from(files).forEach((file) => {
-    formData.append("files", file);
-  });
-
-  formData.append("user_prompt", userPrompt);
-
-  try {
-    const response = await fetch("http://localhost:8000/api/v1/process", {
-      method: "POST",
-      body: formData,
-    });
-
-    if (!response.ok) {
-      throw new Error(`${response.status}`);
-    }
-
-    const data = await response.json();
-
-    return data.message;
-  } catch (error) {
-    return `${error}`;
-  }
-}
+createRoot(document.getElementById("root")!).render(
+  createElement(StrictMode, null, createElement(App)),
+);

@@ -2,21 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>PerWord</title>
   </head>
   <body>
-    <textarea name="userPrompt" id="userPrompt" placeholder="Enter instruction" cols="40" rows="5"></textarea>
-    <br>
-    <br>
-    <input type="file" name="fileInputs" id="fileInputs" multiple>
-    <br>
-    <br>
-    <button id="submitButton">Submit</button>
-    <br>
-    <br>
-    <h2 id="result"></h2>
-    <script type="module" src="/src/main.ts"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

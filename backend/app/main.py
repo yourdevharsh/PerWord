@@ -25,7 +25,7 @@ async def process(
 ):
     # upload_files(files)
     for file in files:
-        print(file)
+        upload_file(file)
     
     # try:
     #     chat = send_to_llm(user_prompt=user_prompt)

@@ -1,0 +1,26 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  height: 72px;
+  padding: 0 44px;
+  border-bottom: 1px solid #ececea;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+}
+
+.site-header__brand {
+  color: #111111;
+  font-size: 21px;
+  font-weight: 750;
+  letter-spacing: -0.05em;
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    height: 64px;
+    padding: 0 20px;
+  }
+}
