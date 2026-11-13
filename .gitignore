@@ -47,3 +47,5 @@ backend/python/storage/*
 .idea/
 
 appsettings.Development.json
+
+trash
